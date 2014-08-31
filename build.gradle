@@ -16,6 +16,8 @@ lazybones {
     repositoryName = "ihomeautomate/lazybones-templates" 
     repositoryUsername = project.hasProperty('bintrayUser')?project.getProperty('bintrayUser'):System.getenv('BINTRAY_USER')?:''
     repositoryApiKey = project.hasProperty('bintrayKey')?project.getProperty('bintrayKey'):System.getenv('BINTRAY_KEY')?:''
+
+    licenses = ["Apache-2.0"]
 }
 
 task wrapper(type: Wrapper) {
