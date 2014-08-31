@@ -36,9 +36,7 @@ HomeSeer plugin lazybones templates
 
 ### Lazybones Info
 
-You can find out more about creating lazybones templates on its [GitHub wiki][1].
-
-[1]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide
+You can find out more about creating lazybones templates on its [github wiki][7].
 
 ### Copyright and licensing
     
@@ -82,5 +80,6 @@ Code and documentation copyright 2014 [iHomeAutomate](http://www.iHomeAutomate.e
 [2]: https://facebook.com/pages/iHomeAutomate/218034961586842
 [3]: https://plus.google.com/+IhomeautomateEu
 [6]: http://github.com/ihomeautomate
+[7]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->    
