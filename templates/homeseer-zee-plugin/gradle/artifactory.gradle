@@ -1,0 +1,36 @@
+// handles distribution of snapshots to Artifactory (oss.jfrog.org)
+
+apply plugin: "com.jfrog.artifactory"
+
+artifactory {
+    contextUrl = 'http://oss.jfrog.org/artifactory'
+    publish {
+        repository {
+            repoKey = 'oss-snapshot-local'
+            username = bintrayUser
+            password = bintrayKey
+            maven = true
+        }
+        defaults {
+            publications ('xamarin')
+            properties = ['moreinfo': '${vendorUrl}']
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'libs-snapshot'
+            username = bintrayUser
+            password = bintrayKey
+            maven = true
+
+        }
+    }
+}
+
+artifactoryPublish {
+    onlyIf {
+        def pullRequest = System.getenv('TRAVIS_PULL_REQUEST')
+
+        !pullRequest || pullRequest=='false'
+    }
+}

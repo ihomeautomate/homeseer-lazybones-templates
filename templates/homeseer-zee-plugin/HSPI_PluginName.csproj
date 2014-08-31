@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '\$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '\$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>${projectGuid}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HSPI_${pluginName}</RootNamespace>
+    <AssemblyName>HSPI_${pluginName}</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '\$(Configuration)|\$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '\$(Configuration)|\$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="HomeSeerAPI">
+      <HintPath>References\\HomeSeerAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheduler">
+      <HintPath>References\\Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="HSCF">
+      <HintPath>References\\HSCF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\\AssemblyInfo.cs" />
+    <Compile Include="HSPI_${pluginName}.cs" />
+  </ItemGroup>
+  <Import Project="\$(MSBuildBinPath)\\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="build.gradle" />
+    <None Include="README.md" />
+    <None Include="LICENSE.txt" />
+    <None Include="gradle\\credentials.gradle" />
+    <None Include="gradle\\publishing.gradle" />
+    <None Include="gradle.properties" />
+    <None Include="gradle\\artifactory.gradle" />
+    <None Include="gradle\\bintray.gradle" />    
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="gradle\\" />    
+  </ItemGroup>
+</Project>

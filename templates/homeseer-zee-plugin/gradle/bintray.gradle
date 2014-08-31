@@ -1,0 +1,32 @@
+// Handles publication of distributions to Bintray
+
+apply plugin: 'com.jfrog.bintray'
+
+def attr = { String name -> project."\$name" }
+
+bintray {
+    user = bintrayUser
+    key = bintrayKey
+    publications = ['xamarin']
+    dryRun = false
+    publish = false
+    pkg {
+        repo = 'HomeSeer'
+        name = 'HSPI_${pluginName}'
+        desc = attr 'project_description'
+        websiteUrl = attr 'project_url'
+        issueTrackerUrl = attr 'project_issues_url'
+        vcsUrl = 'https://github.com/${vendor}/HSPI_${pluginName}.git'
+        licenses = ['LGPL-2.1']
+        labels = ['C#', 'HS3', 'HomeSeer', 'HomeTroller-Zee', 'HS3-Pi']   
+
+        publicDownloadNumbers = false
+        attributes= ['More info': '${vendorUrl}']
+
+        version {
+            name = attr 'version'
+            vcsTag = attr 'version'
+            attributes = ['More info': '${vendorUrl}']
+        }
+    }
+}

@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://dl.bintray.com/pledbrook/plugins"
+        }
+    }
+
+    dependencies {
+        classpath "uk.co.cacoethes:lazybones-gradle:1.2"
+    }
+}
+
+apply plugin: "uk.co.cacoethes.lazybones-templates"
+
+lazybones {
+    repositoryName = "ihomeautomate/lazybones-templates" 
+    repositoryUsername = project.hasProperty('bintrayUser')?project.getProperty('bintrayUser'):System.getenv('BINTRAY_USER')?:''
+    repositoryApiKey = project.hasProperty('bintrayKey')?project.getProperty('bintrayKey'):System.getenv('BINTRAY_KEY')?:''
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "2.0"
+}

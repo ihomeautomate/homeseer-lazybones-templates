@@ -1,0 +1,38 @@
+apply from: 'gradle/credentials.gradle'
+apply from: 'gradle/publishing.gradle'
+apply from: 'gradle/artifactory.gradle'
+apply from: 'gradle/bintray.gradle'
+
+buildscript {
+    repositories {
+        //maven { /* For use of snapshots */
+        //    name 'JFrog OSS snapshot repo'
+        //    url  'https://oss.jfrog.org/oss-snapshot-local/'
+        //}
+        jcenter()
+        //mavenLocal()
+    }
+    dependencies {
+        classpath 'eu.ihomeautomate.gradle:gradle-homeseer-plugin:0.3.0'
+        classpath 'eu.ihomeautomate.gradle:gradle-xamarin-publish-plugin:1.0.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.5'
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1'
+    }
+}
+
+apply plugin: 'eu.ihomeautomate.gradle.homeseer'
+
+homeseer {
+    homeseerSdkDownloadUrl = 'http://www.homeseer.com/updates3/hslinux_zee_3_0_0_125.tar.gz'
+    sdkReferencesTargetDirectory = "References"
+}
+
+xamarin {
+    genericLibraryProject {
+        projectFile 'HSPI_${pluginName}.csproj'        
+    }
+}   
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
