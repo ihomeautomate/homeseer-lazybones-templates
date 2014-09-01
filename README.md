@@ -56,12 +56,12 @@ Code and documentation copyright 2014 [iHomeAutomate](http://www.iHomeAutomate.e
 
 <!-- icons with padding -->
 
-[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
-[3.1]: http://i.imgur.com/yCsTjba.png (google plus icon with padding)
+[1.1]: http://i.imgur.com/tXSoThF.png (@ihomeautomate)
+[2.1]: http://i.imgur.com/P3YfQoD.png (iHomeAutomate facebook page)
+[3.1]: http://i.imgur.com/yCsTjba.png (+iHomeAutomateEu)
 [4.1]: http://i.imgur.com/YckIOms.png (tumblr icon with padding)
 [5.1]: http://i.imgur.com/1AGmwO3.png (dribbble icon with padding)
-[6.1]: http://i.imgur.com/0o48UoR.png (github icon with padding)
+[6.1]: http://i.imgur.com/0o48UoR.png (github.com/ihomeautomate)
 
 <!-- icons without padding -->
 
